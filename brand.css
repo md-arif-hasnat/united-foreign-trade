@@ -1,0 +1,85 @@
+.brand-logo {
+  width: 58px;
+  height: 42px;
+  padding: 3px;
+  object-fit: contain;
+  border-radius: 7px;
+  background: #fff;
+}
+
+.brand-name em { color: #70c783; }
+
+.preview-toolbar {
+  position: fixed;
+  z-index: 1000;
+  right: 16px;
+  bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px;
+  color: #e5edf1;
+  background: rgba(4, 19, 31, .92);
+  border: 1px solid rgba(255, 255, 255, .18);
+  border-radius: 999px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, .25);
+  backdrop-filter: blur(16px);
+}
+
+.preview-toolbar > span {
+  padding: 0 8px;
+  font: 600 11px/1 "Manrope", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: #8ea0aa;
+}
+
+.preview-toolbar a {
+  min-width: 74px;
+  padding: 9px 12px;
+  border-radius: 999px;
+  text-align: center;
+  font: 700 12px/1 "Manrope", sans-serif;
+  transition: background .2s, color .2s;
+}
+
+.preview-toolbar a.active {
+  color: #10202b;
+  background: #70c783;
+}
+
+html[data-view="desktop"] .preview-toolbar {
+  transform: scale(1.75);
+  transform-origin: right bottom;
+  right: 28px;
+  bottom: 28px;
+}
+
+.direct-contact a:hover strong { color: #70c783; }
+
+.feather { background: linear-gradient(145deg, #71828d, #172937); }
+.recycled { background: linear-gradient(145deg, #356947, #142c21); }
+.gifts { background: linear-gradient(145deg, #725929, #241e15); }
+.corporate { background: linear-gradient(145deg, #344e68, #111f2d); }
+
+.market-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin: 28px 0 8px;
+}
+
+.market-tags span {
+  padding: 8px 13px;
+  border: 1px solid rgba(255, 255, 255, .18);
+  border-radius: 999px;
+  color: #d5e0e5;
+  font: 600 12px/1 "Manrope", sans-serif;
+}
+
+@media (max-width: 580px) {
+  .brand-logo { width: 50px; height: 36px; }
+  .brand-name { max-width: 105px; line-height: 1.05; }
+  .preview-toolbar { left: 50%; right: auto; transform: translateX(-50%); }
+  .preview-toolbar > span { display: none; }
+}
