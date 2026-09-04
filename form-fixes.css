@@ -24,17 +24,19 @@
   height: 48px;
   display: grid;
   place-items: center;
-  color: #fff;
-  border: 1px solid rgba(255,255,255,.35);
+  color: #d9ad55;
+  background: #0b2438;
+  border: 1px solid rgba(217,173,85,.72);
   border-radius: 50%;
-  box-shadow: 0 8px 24px rgba(0,0,0,.24);
-  transition: transform .2s ease, box-shadow .2s ease;
+  box-shadow: 0 8px 24px rgba(4,19,31,.32);
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
 }
 
 .floating-contact__link:hover,
 .floating-contact__link:focus-visible {
   transform: translateX(4px) scale(1.05);
-  box-shadow: 0 10px 30px rgba(0,0,0,.32);
+  background: #102f47;
+  box-shadow: 0 10px 30px rgba(4,19,31,.4);
 }
 
 .floating-contact__link svg {
@@ -43,9 +45,9 @@
   fill: currentColor;
 }
 
-.floating-contact__link.whatsapp { background: #25d366; }
-.floating-contact__link.facebook { background: #1877f2; }
-.floating-contact__link.email { background: #d9ad55; color: #10202b; }
+.floating-contact__link.whatsapp,
+.floating-contact__link.facebook,
+.floating-contact__link.email { background: #0b2438; color: #d9ad55; }
 
 @media (max-width: 580px) {
   .hero {
