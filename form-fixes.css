@@ -8,3 +8,58 @@
   opacity: 0.72;
   transform: none;
 }
+
+.floating-contact {
+  position: fixed;
+  z-index: 45;
+  top: 50%;
+  left: 14px;
+  display: grid;
+  gap: 10px;
+  transform: translateY(-50%);
+}
+
+.floating-contact__link {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,.35);
+  border-radius: 50%;
+  box-shadow: 0 8px 24px rgba(0,0,0,.24);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.floating-contact__link:hover,
+.floating-contact__link:focus-visible {
+  transform: translateX(4px) scale(1.05);
+  box-shadow: 0 10px 30px rgba(0,0,0,.32);
+}
+
+.floating-contact__link svg {
+  width: 23px;
+  height: 23px;
+  fill: currentColor;
+}
+
+.floating-contact__link.whatsapp { background: #25d366; }
+.floating-contact__link.facebook { background: #1877f2; }
+.floating-contact__link.email { background: #d9ad55; color: #10202b; }
+
+@media (max-width: 580px) {
+  .floating-contact {
+    left: 8px;
+    gap: 8px;
+  }
+
+  .floating-contact__link {
+    width: 43px;
+    height: 43px;
+  }
+
+  .floating-contact__link svg {
+    width: 21px;
+    height: 21px;
+  }
+}
