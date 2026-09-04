@@ -34,37 +34,3 @@ document.documentElement.dataset.view = requestedView;
 document.querySelectorAll('.preview-toolbar a').forEach((link) => {
   link.classList.toggle('active', link.dataset.view === requestedView);
 });
-
-document.querySelector('#inquiry-form').addEventListener('submit', async (event) => {
-  event.preventDefault();
-  const inquiryForm = event.currentTarget;
-  const formData = new FormData(inquiryForm);
-  const status = inquiryForm.querySelector('.form-success');
-  const submitButton = inquiryForm.querySelector('button[type="submit"]');
-
-  formData.set('_subject', `New website inquiry: ${formData.get('product')}`);
-  status.className = 'form-success';
-  status.textContent = '';
-  submitButton.disabled = true;
-  submitButton.innerHTML = 'Sending…';
-
-  try {
-    const response = await fetch('https://formsubmit.co/ajax/uftbdofficial@gmail.com', {
-      method: 'POST',
-      headers: { Accept: 'application/json' },
-      body: formData
-    });
-    const result = await response.json();
-    if (!response.ok || result.success === false) throw new Error('Submission failed');
-
-    inquiryForm.reset();
-    status.textContent = 'Thank you — your inquiry has been sent successfully.';
-    status.classList.add('show');
-  } catch (error) {
-    status.textContent = 'We could not send your inquiry. Please email uftbdofficial@gmail.com or contact us on WhatsApp.';
-    status.classList.add('show', 'error');
-  } finally {
-    submitButton.disabled = false;
-    submitButton.innerHTML = 'Send inquiry <span>↗</span>';
-  }
-});
