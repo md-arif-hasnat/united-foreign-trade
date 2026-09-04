@@ -34,3 +34,48 @@ document.documentElement.dataset.view = requestedView;
 document.querySelectorAll('.preview-toolbar a').forEach((link) => {
   link.classList.toggle('active', link.dataset.view === requestedView);
 });
+
+const inquiryForm = document.querySelector('#inquiry-form');
+const inquiryButton = inquiryForm?.querySelector('.form-button');
+const inquiryStatus = inquiryForm?.querySelector('.form-success');
+
+inquiryForm?.addEventListener('submit', async (event) => {
+  event.preventDefault();
+
+  const formData = new FormData(inquiryForm);
+  const buyerEmail = String(formData.get('email') || '').trim();
+
+  if (buyerEmail && !inquiryForm.elements.email.checkValidity()) {
+    inquiryForm.elements.email.reportValidity();
+    return;
+  }
+
+  inquiryButton.disabled = true;
+  inquiryButton.innerHTML = 'Sending inquiry…';
+  inquiryStatus.classList.remove('error');
+  inquiryStatus.classList.add('show');
+  inquiryStatus.textContent = 'Your inquiry is being sent securely…';
+
+  try {
+    const endpoint = inquiryForm.action.replace('formsubmit.co/', 'formsubmit.co/ajax/');
+    const response = await fetch(endpoint, {
+      method: 'POST',
+      headers: { Accept: 'application/json' },
+      body: formData,
+    });
+
+    const result = await response.json().catch(() => ({}));
+    if (!response.ok || result.success === false) {
+      throw new Error(result.message || 'The inquiry service could not accept the message.');
+    }
+
+    inquiryStatus.textContent = 'Thank you. Your inquiry has been sent successfully.';
+    inquiryForm.reset();
+  } catch (error) {
+    inquiryStatus.classList.add('error');
+    inquiryStatus.textContent = 'We could not send your inquiry. Please email uftbdofficial@gmail.com or contact us on WhatsApp.';
+  } finally {
+    inquiryButton.disabled = false;
+    inquiryButton.innerHTML = 'Send inquiry <span>↗</span>';
+  }
+});
