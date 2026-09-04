@@ -48,6 +48,30 @@
 .floating-contact__link.email { background: #d9ad55; color: #10202b; }
 
 @media (max-width: 580px) {
+  .hero {
+    height: auto;
+    min-height: 840px;
+    padding: 132px 24px 175px;
+  }
+
+  .hero-content {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    transform: none;
+  }
+
+  .hero-actions {
+    margin-bottom: 36px;
+  }
+
+  .hero-status {
+    right: 24px;
+    bottom: 28px;
+    left: 24px;
+  }
+
   .floating-contact {
     left: 8px;
     gap: 8px;
