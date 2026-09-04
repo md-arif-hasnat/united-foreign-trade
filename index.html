@@ -11,6 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="form-fixes.css" />
   <link rel="stylesheet" href="brand.css" />
 </head>
 <body>
@@ -140,7 +141,10 @@
         </div>
         <p class="demo-note">Business hours: Always open</p>
       </div>
-      <form class="inquiry-form reveal delay-1" id="inquiry-form">
+      <form class="inquiry-form reveal delay-1" id="inquiry-form" action="https://formsubmit.co/uftbdofficial@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="New website inquiry — United Foreign Trade" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_captcha" value="false" />
         <div class="form-heading"><strong>Request a quotation</strong><span>Usually replies within 48h</span></div>
         <label><span>Your name</span><input name="name" type="text" placeholder="Full name" required /></label>
         <div class="form-row">
@@ -153,7 +157,7 @@
         </div>
         <label><span>Requirement</span><textarea name="message" rows="4" placeholder="Quantity, specifications, packaging and preferred delivery timeline"></textarea></label>
         <button class="button button-primary form-button" type="submit">Send inquiry <span>↗</span></button>
-        <div class="form-success" role="status" aria-live="polite">Thank you — your email app is opening with the inquiry details.</div>
+        <div class="form-success" role="status" aria-live="polite"></div>
       </form>
     </section>
   </main>

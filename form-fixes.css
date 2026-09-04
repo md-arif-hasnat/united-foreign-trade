@@ -1,0 +1,10 @@
+.form-success.error {
+  background: #f8e8e8;
+  color: #842f2f;
+}
+
+.form-button:disabled {
+  cursor: wait;
+  opacity: 0.72;
+  transform: none;
+}
