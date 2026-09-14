@@ -29,12 +29,6 @@ window.addEventListener('mousemove', (event) => {
 
 document.querySelector('#year').textContent = new Date().getFullYear();
 
-const requestedView = new URLSearchParams(window.location.search).get('view') === 'desktop' ? 'desktop' : 'mobile';
-document.documentElement.dataset.view = requestedView;
-document.querySelectorAll('.preview-toolbar a').forEach((link) => {
-  link.classList.toggle('active', link.dataset.view === requestedView);
-});
-
 const inquiryForm = document.querySelector('#inquiry-form');
 const inquiryButton = inquiryForm?.querySelector('.form-button');
 const inquiryStatus = inquiryForm?.querySelector('.form-success');
@@ -42,13 +36,12 @@ const inquiryStatus = inquiryForm?.querySelector('.form-success');
 inquiryForm?.addEventListener('submit', async (event) => {
   event.preventDefault();
 
-  const formData = new FormData(inquiryForm);
-  const buyerEmail = String(formData.get('email') || '').trim();
-
-  if (buyerEmail && !inquiryForm.elements.email.checkValidity()) {
-    inquiryForm.elements.email.reportValidity();
+  if (!inquiryForm.checkValidity()) {
+    inquiryForm.reportValidity();
     return;
   }
+
+  const formData = new FormData(inquiryForm);
 
   inquiryButton.disabled = true;
   inquiryButton.innerHTML = 'Sending inquiry…';
