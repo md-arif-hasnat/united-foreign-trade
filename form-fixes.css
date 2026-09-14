@@ -9,6 +9,22 @@
   transform: none;
 }
 
+.contact::before {
+  pointer-events: none;
+}
+
+.inquiry-form {
+  position: relative;
+  z-index: 1;
+}
+
+.form-button {
+  position: relative;
+  z-index: 2;
+  pointer-events: auto;
+  touch-action: manipulation;
+}
+
 .floating-contact {
   position: fixed;
   z-index: 45;
