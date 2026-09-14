@@ -52,8 +52,8 @@
 @media (max-width: 580px) {
   .hero {
     height: auto;
-    min-height: 840px;
-    padding: 132px 24px 175px;
+    min-height: 0;
+    padding: 150px 24px 20px;
   }
 
   .hero-content {
