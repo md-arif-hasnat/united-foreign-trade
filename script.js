@@ -69,6 +69,6 @@ inquiryForm?.addEventListener('submit', async (event) => {
     inquiryStatus.textContent = 'We could not send your inquiry. Please email uftbdofficial@gmail.com or contact us on WhatsApp.';
   } finally {
     inquiryButton.disabled = false;
-    inquiryButton.innerHTML = 'Send inquiry <span>↗</span>';
+    inquiryButton.textContent = 'Send inquiry';
   }
 });
