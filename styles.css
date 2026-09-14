@@ -2,3 +2,4 @@
 @media(max-width:900px){.hero-status{bottom:110px}}
 @media(max-width:900px){.hero-stack{position:absolute;z-index:2;top:150px;left:24px;right:24px}.hero-stack .hero-content{position:static;transform:none;width:100%}.hero-stack .hero-content>p{margin-bottom:0}.hero-stack .hero-status{position:static;margin-top:0;width:max-content;max-width:100%}}
 @media(max-width:900px){.hero{height:auto;min-height:0;padding:150px 24px 20px}.hero-stack{position:relative;top:auto;left:auto;right:auto}.hero-stack .hero-status{bottom:auto}}
+@media(max-width:900px){.hero-stack .hero-status{margin-top:40px}}
