@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta id="viewport-meta" name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script>if(new URLSearchParams(location.search).get('view')==='desktop'){document.querySelector('#viewport-meta').setAttribute('content','width=1280, initial-scale=1.0')}</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="United Foreign Trade is a Bangladesh-based export, import and supply business specializing in fresh potatoes, duck feather, eco-friendly recycled items and corporate gifts." />
   <meta name="theme-color" content="#061827" />
   <title>United Foreign Trade — Fresh Products, Global Reach</title>
@@ -26,11 +25,6 @@
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a4 4 0 0 0-4 4v8a4 4 0 0 0 4 4h16a4 4 0 0 0 4-4V8a4 4 0 0 0-4-4Zm0 3-8 5-8-5h16Zm0 10H4a1 1 0 0 1-1-1V9l8.2 5.1a1.5 1.5 0 0 0 1.6 0L21 9v7a1 1 0 0 1-1 1Z"/></svg>
     </a>
   </aside>
-  <div class="preview-toolbar" aria-label="Preview layout">
-    <span>Preview</span>
-    <a href="?view=mobile" data-view="mobile">Mobile</a>
-    <a href="?view=desktop" data-view="desktop">Desktop</a>
-  </div>
   <div class="cursor-glow" aria-hidden="true"></div>
   <header class="site-header" id="top">
     <a class="brand" href="#top" aria-label="United Foreign Trade home">
@@ -157,16 +151,16 @@
         <input type="hidden" name="_template" value="table" />
         <input type="hidden" name="_captcha" value="false" />
         <div class="form-heading"><strong>Request a quotation</strong><span>Usually replies within 48h</span></div>
-        <label><span>Your name</span><input name="name" type="text" placeholder="Full name" /></label>
+        <label><span>Your name</span><input name="name" type="text" placeholder="Full name" autocomplete="name" required /></label>
         <div class="form-row">
-          <label><span>Work email</span><input name="email" type="email" placeholder="you@company.com" /></label>
-          <label><span>Company</span><input name="company" type="text" placeholder="Company name" /></label>
+          <label><span>Work email</span><input name="email" type="email" placeholder="you@company.com" autocomplete="email" required /></label>
+          <label><span>Company</span><input name="company" type="text" placeholder="Company name" autocomplete="organization" required /></label>
         </div>
         <div class="form-row">
-          <label><span>Product or service</span><select name="product"><option value="">Select an option</option><option>Fresh potatoes — export</option><option>Duck feather — export</option><option>Eco-friendly recycled items — export</option><option>Gift items — import</option><option>Corporate gift items — local supply</option></select></label>
-          <label><span>Destination</span><input name="destination" type="text" placeholder="Country / port" /></label>
+          <label><span>Product or service</span><select name="product" required><option value="">Select an option</option><option>Fresh potatoes — export</option><option>Duck feather — export</option><option>Eco-friendly recycled items — export</option><option>Gift items — import</option><option>Corporate gift items — local supply</option></select></label>
+          <label><span>Destination</span><input name="destination" type="text" placeholder="Country / port" required /></label>
         </div>
-        <label><span>Requirement</span><textarea name="message" rows="4" placeholder="Quantity, specifications, packaging and preferred delivery timeline"></textarea></label>
+        <label><span>Requirement</span><textarea name="message" rows="4" placeholder="Quantity, specifications, packaging and preferred delivery timeline" required></textarea></label>
         <button class="button button-primary form-button" type="submit">Send inquiry <span>↗</span></button>
         <div class="form-success" role="status" aria-live="polite"></div>
       </form>
