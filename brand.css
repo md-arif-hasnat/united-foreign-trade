@@ -9,6 +9,8 @@
 
 .brand-name em { color: #70c783; }
 
+.site-header .brand-name em { color: inherit; }
+
 .site-header {
   position: fixed;
   z-index: 60;
